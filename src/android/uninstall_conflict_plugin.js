@@ -1,8 +1,8 @@
 module.exports = function (ctx) {
 
-  var PluginInfoProvider = ctx.requireCordovaModule('cordova-common').PluginInfoProvider;
+  var PluginInfoProvider = require('cordova-common').PluginInfoProvider;
 
-  var path = ctx.requireCordovaModule('path');
+  var path = require('path');
 
   var projectRoot = ctx.opts.projectRoot;
   return (new Promise(function (resolve, reject) {
@@ -26,7 +26,7 @@ module.exports = function (ctx) {
 	  console.info('uninstall cordova-plugin-androidx-adapter automatically.');
 	  console.info('-----------------------------------------------------');
 
-	  var exec = ctx.requireCordovaModule('child_process').exec;
+	  var exec = require('child_process').exec;
 	  exec('cordova plugin rm cordova-plugin-androidx-adapter 2>&1', function (err, stdout) {
 		if (err) {
 		  reject(err);
