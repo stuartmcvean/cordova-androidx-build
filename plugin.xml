@@ -13,6 +13,7 @@
 
   <platform name="android">
     <framework src="src/android/cordova-androidx-build.gradle" custom="true" type="gradleReference"/>
+      <hook type="after_plugin_install" src="src/android/changeGradleProperties.js"/>
       <hook type="before_prepare" src="src/android/uninstall_conflict_plugin.js"/>
       <hook type="before_plugin_ls" src="src/android/uninstall_conflict_plugin.js"/>
   </platform>
